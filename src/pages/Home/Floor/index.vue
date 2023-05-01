@@ -24,7 +24,7 @@
                   {{ kw }}
                 </li>
               </ul>
-              <img :src="list.imgUrl" />
+              <img :src="`${publicPath}${list.imgUrl}`" />
             </div>
             <div class="floorBanner">
               <Carousel :list="list.carouselList" />
@@ -32,22 +32,22 @@
             <div class="split">
               <span class="floor-x-line"></span>
               <div class="floor-conver-pit">
-                <img :src="list.recommendList[0]" />
+                <img :src="`${publicPath}${list.recommendList[0]}`" />
               </div>
               <div class="floor-conver-pit">
-                <img :src="list.recommendList[1]" />
+                <img :src="`${publicPath}${list.recommendList[1]}`" />
               </div>
             </div>
             <div class="split center">
-              <img :src="list.bigImg" />
+              <img :src="`${publicPath}${list.bigImg}`" />
             </div>
             <div class="split">
               <span class="floor-x-line"></span>
               <div class="floor-conver-pit">
-                <img :src="list.recommendList[2]" />
+                <img :src="`${publicPath}${list.recommendList[2]}`" />
               </div>
               <div class="floor-conver-pit">
-                <img :src="list.recommendList[3]" />
+                <img :src="`${publicPath}${list.recommendList[3]}`" />
               </div>
             </div>
           </div>
@@ -61,6 +61,11 @@
 export default {
   props: ["list"],
   mounted() {},
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+    };
+  },
 };
 </script>
 
@@ -198,4 +203,5 @@ export default {
     }
   }
 }
-</style>>
+</style>
+>

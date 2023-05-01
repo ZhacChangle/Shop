@@ -2,12 +2,14 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "github": "vue-cli-service build --mode github",
     "lint": "vue-cli-service lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist git@github.com:ZhacChangle/Shop.git -b gh-pages"
+    "predeploy": "npm run github",
+    "deploy": "gh-pages -d dist git@github.com:ZhacChangle/ZhacChangle.github.io.git -b gh-pages"
   },
   "dependencies": {
     "axios": "^0.26.1",

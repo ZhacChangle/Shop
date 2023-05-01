@@ -16,12 +16,12 @@ export const reqGetSearchInfo = (params) => requests({
     data: params
 })
 
-export const reqGetDetailInfo = (skuId) => requests({ url: `/item/${ skuId }`, method: 'get' })
-export const reqAddOrUpdateShopCar = (skuId, skuNum) => requests({ url: `/cart/addToCart/${ skuId }/${ skuNum }`, method: 'post' })
+export const reqGetDetailInfo = (skuId) => requests({ url: `/item/${skuId}`, method: 'get' })
+export const reqAddOrUpdateShopCar = (skuId, skuNum) => requests({ url: `/cart/addToCart/${skuId}/${skuNum}`, method: 'post' })
 export const reqCarList = () => requests({ url: "/cart/cartList", method: "get" })
 export const reqDeleteCartById = (skuId) => requests({ url: `/cart/deleteCart/${skuId}`, method: "DELETE" })
 export const reqCheckCartById = (skuId, isChecked) => requests({ url: `/cart/checkCart/${skuId}/${isChecked}`, method: "get" })
-    // /api/user/passport/sendCode/{phone}
+// /api/user/passport/sendCode/{phone}
 export const reqGetCode = (phone) => requests({ url: `/user/passport/sendCode/${phone}`, method: "get" })
 export const reqRegister = (data) => requests({ url: `/user/passport/register`, data, method: "post" })
 export const reqLogin = (data) => requests({ url: `/user/passport/login`, data, method: 'post' })

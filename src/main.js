@@ -12,9 +12,9 @@ import VueLazyload from 'vue-lazyload'
 import NPM from "@/assets/001.jpg"
 
 Vue.use(VueLazyload, {
-        loading: NPM,
-    })
-    // 第一个参数：全局组件的名字 第二个参数：哪个组件
+    loading: NPM,
+})
+// 第一个参数：全局组件的名字 第二个参数：哪个组件
 Vue.component(TypeNav.name, TypeNav);
 Vue.component(Carousel.name, Carousel);
 Vue.component(Pagination.name, Pagination);

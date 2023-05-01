@@ -11,26 +11,27 @@ import store from "@/store"
 let originPush = VueRouter.prototype.push;
 let originReplace = VueRouter.prototype.replace;
 // 重写push
-VueRouter.prototype.push = function(location, resolve, reject) {
+VueRouter.prototype.push = function (location, resolve, reject) {
     if (resolve && reject) {
         originPush.call(this, location, resolve, reject);
     } else {
-        originPush.call(this, location, () => {}, () => {});
+        originPush.call(this, location, () => { }, () => { });
     }
 }
 
 // 重写replace
-VueRouter.prototype.replace = function(location, resolve, reject) {
+VueRouter.prototype.replace = function (location, resolve, reject) {
     if (resolve && reject) {
         originReplace.call(this, location, resolve, reject);
     } else {
-        originReplace.call(this, location, () => {}, () => {});
+        originReplace.call(this, location, () => { }, () => { });
     }
 }
 
 
 
 let router = new VueRouter({
+    base: '/Shop/',
     routes,
     scrollBehavior(to, from, savedPosition) {
         // 始终滚动到顶部
@@ -38,7 +39,7 @@ let router = new VueRouter({
     },
 })
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach(async (to, from, next) => {
     let token = store.state.user.token;
     let name = store.state.user.userInfo.name;
     if (token) {
